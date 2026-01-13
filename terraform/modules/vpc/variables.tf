@@ -14,11 +14,23 @@ variable "vpc_tags" {
   
 }
 
+variable "enable_dns_support" {
+    default = true
+    description = "Use AWS provided DNS server"
+  
+}
+
+variable "enable_dns_hostnames" {
+    default = true
+    description = "Use AWS provided DNS server"
+  
+}
+
 #First Private Subnet Variables
 
 variable "private_subnet_1_cidr_block" {
     type = string 
-    default = "10.0.1.0/16"
+    default = "10.0.1.0/24"
     description = "The CIDR block for the first private subnet"
   
 }
@@ -34,7 +46,7 @@ variable "private_subnet_1_tags" {
 
 variable "private_subnet_2_cidr_block" {
     type = string 
-    default = "10.0.2.0/16"
+    default = "10.0.2.0/24"
     description = "The CIDR block for the second private subnet"
   
 }
@@ -50,7 +62,7 @@ variable "private_subnet_2_tags" {
 
 variable "public_subnet_1_cidr_block" {
     type = string 
-    default = "10.0.3.0/16"
+    default = "10.0.3.0/24"
     description = "The CIDR block for the first public subnet"
   
 }
@@ -62,11 +74,18 @@ variable "public_subnet_1_tags" {
   
 }
 
+variable "map_public_ip_on_launch" {
+    type = bool
+    default = true
+    description = "Resources in subnet get auto assigned public IPs"
+  
+}
+
 # Second Public Subnet Variables
 
 variable "public_subnet_2_cidr_block" {
     type = string 
-    default = "10.0.4.0/16"
+    default = "10.0.4.0/24"
     description = "The CIDR block for the second public subnet"
   
 }
@@ -183,6 +202,22 @@ variable "private_route_table_tags_2" {
     type = string 
     default = "second-private-route-table"
     description = "Tags for the second private route table"
+  
+}
+
+#Availiability Zones 
+
+variable "az_1" {
+    type = string 
+    default = "eu-west-2a"
+    description = "Name of the first availability zone "
+  
+}
+
+variable "az_2" {
+    type = string 
+    default = "eu-west-2b"
+    description = "Name of the first availability zone "
   
 }
 
