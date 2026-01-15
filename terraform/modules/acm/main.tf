@@ -9,7 +9,9 @@ resource "aws_acm_certificate" "ecs" {
   }
 }
 
-#Wait for cert to be issued 
+
+#Wait till cert is issued 
+
 
 resource "aws_acm_certificate_validation" "ecs-cert-validation" {
     validation_record_fqdns = [ cloudflare_dns_record.domain_validation_record.name ]
