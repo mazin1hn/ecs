@@ -2,25 +2,27 @@
 
 variable "vpc_cidr_block" {
     type = string 
-    default = "10.0.0.0/16"
+    default = null
     description = "The CIDR block for the vpc"
   
 }
 
 variable "vpc_tags" {
     type = string
-    default = "main"
+    default = "ecs"
     description = "Tags for the VPC"
   
 }
 
 variable "enable_dns_support" {
+    type = bool
     default = true
     description = "Use AWS provided DNS server"
   
 }
 
 variable "enable_dns_hostnames" {
+    type = bool
     default = true
     description = "Use AWS provided DNS server"
   
@@ -30,14 +32,14 @@ variable "enable_dns_hostnames" {
 
 variable "private_subnet_1_cidr_block" {
     type = string 
-    default = "10.0.1.0/24"
+    default = null
     description = "The CIDR block for the first private subnet"
   
 }
 
 variable "private_subnet_1_tags" {
     type = string
-    default = "private-subnet-1"
+    default = "private_subnet_1"
     description = "Tags for the first private subnet"
   
 }
@@ -46,14 +48,14 @@ variable "private_subnet_1_tags" {
 
 variable "private_subnet_2_cidr_block" {
     type = string 
-    default = "10.0.2.0/24"
+    default = null
     description = "The CIDR block for the second private subnet"
   
 }
 
 variable "private_subnet_2_tags" {
     type = string
-    default = "private-subnet-2"
+    default = "private_subnet_2"
     description = "Tags for the second private subnet"
   
 }
@@ -62,7 +64,7 @@ variable "private_subnet_2_tags" {
 
 variable "public_subnet_1_cidr_block" {
     type = string 
-    default = "10.0.3.0/24"
+    default = null
     description = "The CIDR block for the first public subnet"
   
 }
@@ -85,14 +87,14 @@ variable "map_public_ip_on_launch" {
 
 variable "public_subnet_2_cidr_block" {
     type = string 
-    default = "10.0.4.0/24"
+    default = null
     description = "The CIDR block for the second public subnet"
   
 }
 
 variable "public_subnet_2_tags" {
     type = string
-    default = "public-subnet-2"
+    default = "public_subnet_2"
     description = "Tags for the second public subnet"
   
 }
@@ -102,7 +104,7 @@ variable "public_subnet_2_tags" {
 
 variable "igw_tags" {
     type = string 
-    default = "main"
+    default = "ecs"
     description = "Tags for the internet gateway"
   
 }
@@ -143,7 +145,7 @@ variable "eip_tags_2" {
 
 variable "nat_1_tags" {
     type = string 
-    default = "nat-1"
+    default = "nat_1"
     description = "tags for the first NAT Gateway"
   
 }
@@ -152,7 +154,7 @@ variable "nat_1_tags" {
 
 variable "nat_2_tags" {
     type = string 
-    default = "nat-2"
+    default = "nat_2"
     description = "tags for the second NAT gateway"
   
 }
@@ -184,7 +186,7 @@ variable "private_route_table_cidr_block_1" {
 
 variable "private_route_table_tags_1" {
     type = string 
-    default = "first-private-route-table"
+    default = "first_private_route_table"
     description = "Tags for the first private route table"
   
 }
@@ -200,7 +202,7 @@ variable "private_route_table_cidr_block_2" {
 
 variable "private_route_table_tags_2" {
     type = string 
-    default = "second-private-route-table"
+    default = "second_private_route_table"
     description = "Tags for the second private route table"
   
 }
@@ -209,14 +211,14 @@ variable "private_route_table_tags_2" {
 
 variable "az_1" {
     type = string 
-    default = "eu-west-2a"
+    default = null
     description = "Name of the first availability zone "
   
 }
 
 variable "az_2" {
     type = string 
-    default = "eu-west-2b"
+    default = null
     description = "Name of the first availability zone "
   
 }

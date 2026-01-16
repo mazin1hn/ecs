@@ -16,7 +16,7 @@ output "alb_dns_name" {
   
 }
 
-output "aws_lb_HTTPS_listener_arn" {
+output "HTTPS_listener_arn" {
     description = "ARN of the HTTPS Listener"
     value = aws_lb_listener.HTTPS.arn
   

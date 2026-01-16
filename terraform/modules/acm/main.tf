@@ -5,7 +5,7 @@ resource "aws_acm_certificate" "ecs" {
   validation_method = var.acm_certificate_validation_method
 
   lifecycle {
-    create_before_destroy = var.acm_create_before_destroy
+    create_before_destroy = true
   }
 }
 
@@ -13,8 +13,8 @@ resource "aws_acm_certificate" "ecs" {
 #Wait till cert is issued 
 
 
-resource "aws_acm_certificate_validation" "ecs-cert-validation" {
-    validation_record_fqdns = [ cloudflare_dns_record.domain_validation_record.name ]
+resource "aws_acm_certificate_validation" "ecs_cert_validation" {
+    validation_record_fqdns = var.validation_record_fqdns
     certificate_arn = aws_acm_certificate.ecs.arn
   
 }

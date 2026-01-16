@@ -7,7 +7,7 @@ output "ecs_service_name" {
 }
 
 output "ecs_service_arn" {
-  value = aws_ecs_service.gatus.arn
+  value = aws_ecs_service.gatus.id
 }
 
 output "task_definition_arn" {
