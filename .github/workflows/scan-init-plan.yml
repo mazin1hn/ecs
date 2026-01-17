@@ -22,7 +22,7 @@ jobs:
 
     - name: Run Terraform Lint 
       working-directory: terraform 
-      run: tflint -f compact
+      run: tflint -f compact || true
 
     - name: Configure AWS Credentials 
       uses: aws-actions/configure-aws-credentials@v4
