@@ -1,0 +1,39 @@
+name: IaC Scanning + Terraform init + Terraform plan 
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+     id-token: write
+     contents: read
+
+    steps: 
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup Terraform 
+      uses: hashicorp/setup-terraform@v3
+
+    - name: Setup Terraform Lint 
+      uses: terraform-linters/setup-tflint@v6
+
+    - name: Run Terraform Lint 
+      working-directory: terraform 
+      run: tflint -f compact
+
+    - name: Configure AWS Credentials 
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+       role-to-assume: ${{ secrets.AWS_GITHUB_ACTIONS_ROLE }}
+       aws-region: eu-west-2
+    
+    - name: Terraform Init 
+      working-directory: terraform
+      run: terraform init 
+
+    - name: Terraform Plan 
+      working-directory: terraform
+      run: terraform plan
