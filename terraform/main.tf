@@ -1,3 +1,8 @@
+terraform {
+  required_version = "= 1.14.3"
+}
+
+
 module "vpc" {
     source = "./modules/vpc"  
 

@@ -1,14 +1,6 @@
 #Root variable values 
 
-#Provider.tf 
-
-aws_source = "hashicorp/aws"
-
-aws_version = "5.62.0"
-
-cloudflare_source = "cloudflare/cloudflare"
-
-cloudflare_version = "5.15.0"
+project_name = "gatus"
 
 #Provider config
 
@@ -22,20 +14,7 @@ ecs_repository_name = "ecs"
 
 ecs_repository_url = "678536383905.dkr.ecr.eu-west-2.amazonaws.com/ecs"
 
-#Backend.tf
 
-backend_name = "s3"
-
-backend_key = "infra/terraform.tfstate"
-
-backend_region = "eu-west-2"
-
-backend_dynamodb_table = "mazin-ecs-db"
-
-backend_encrypt = true
-
-
-project_name = "gatus"
 
 
 

@@ -1,35 +1,3 @@
-#Root Variables
-
-#Provider.tf Variables 
-
-#Required providers
-
-variable "aws_source" {
-    type = string
-    description = "AWS provider source"
-  
-}
-
-variable "aws_version" {
-    type = string
-    description = "AWS version"
-  
-}
-
-variable "cloudflare_source" {
-    type = string
-    description = "Cloudfare provider source"
-  
-}
-
-variable "cloudflare_version" {
-    type = string
-    description = "Cloudfare version"
-  
-}
-
-
-
 
 #Provider config
 
@@ -62,40 +30,6 @@ variable "ecs_repository_name" {
 variable "ecs_repository_url" {
     type = string 
     description = "URL of ecr repository"
-  
-}
-
-#Backend.tf Variables 
-
-#Backend Variables 
-
-variable "backend_name" {
-    type = string 
-    description = "S3 Bucket name"
-  
-}
-
-variable "backend_key" {
-    type = string
-    description = "Path to S3 remote state"
-  
-}
-
-variable "backend_region" {
-    type = string 
-    description = "Region of Backend"
-  
-}
-
-variable "backend_dynamodb_table" {
-    type = string
-    description = "Name of DynamoDB Table"
-  
-}
-
-variable "backend_encrypt" {
-    type = bool
-    description = "Wether backend encryption toggle is on or not"
   
 }
 
@@ -184,6 +118,7 @@ variable "ecs_service_name" {
 variable "ecs_service_alb_container_name" {
     type = string 
     description = "Container name for our ECS service alb"
+    default = null
   
 }
 
