@@ -28,11 +28,11 @@ jobs:
      uses: aws-actions/amazon-ecr-login@v2
 
    - name: Build Docker Image 
-     working-directory: ./ecs
+     working-directory: ecs
      run: docker build -f docker/dockerfile -t $ECR_REPO:$IMAGE_TAG gatus/ 
 
    - name: Push Docker Image 
-     working-directory: ./ecs
+     working-directory: ecs
      run: docker push $ECR_REPO:$IMAGE_TAG
 
    - name: Notify success
