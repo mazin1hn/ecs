@@ -12,7 +12,7 @@ The setup follows modern DevOps best practices: modular Infrastructure as Code, 
 
 ### Live running Deployment and Application
 
-<img src="assets/ecs-demo.gif" width="900" />
+<img src="assets/successful-deployment.gif" width="900" />
 
 ### Deployment Verification
 
