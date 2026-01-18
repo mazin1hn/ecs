@@ -1,9 +1,13 @@
 name: IaC Scanning + Terraform init + Terraform plan 
 
-on: [push]
+on:
+ workflow_run:
+    workflows: ["Build and Push Docker Image to ECR Repo"]
+    types: [completed]
 
 jobs:
   build:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
 
     permissions:
@@ -22,7 +26,7 @@ jobs:
 
     - name: Run Terraform Lint 
       working-directory: terraform 
-      run: tflint -f compact || true
+      run: tflint -f compact 
 
     - name: Configure AWS Credentials 
       uses: aws-actions/configure-aws-credentials@v4
