@@ -36,7 +36,7 @@ jobs:
       run: terraform validate 
 
     - name: Run Terraform Lint 
-      working-directory: terraform 
+      working-directory: infra
       run: tflint -f compact 
 
     - name: Run Checkov
@@ -55,9 +55,9 @@ jobs:
        aws-region: eu-west-2
     
     - name: Terraform Init 
-      working-directory: terraform
+      working-directory: infra
       run: terraform init 
 
     - name: Terraform Plan 
-      working-directory: terraform
+      working-directory: infra
       run: terraform plan
