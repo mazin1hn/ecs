@@ -47,7 +47,7 @@ az_2 = "eu-west-2b"
 
 #Load Balancer
 
-internal_lb = false 
+internal_lb = false
 
 #ECS Cluster 
 
@@ -61,14 +61,14 @@ task_deinition_memory = 512
 
 
 container_name = "gatus-ecs-container"
-image_id = "678536383905.dkr.ecr.eu-west-2.amazonaws.com/ecs@sha256:18e25249047dd646694956fe078015e16c678ffb1af4071ee208dd6e439df56d"
+image_id       = "678536383905.dkr.ecr.eu-west-2.amazonaws.com/ecs@sha256:18e25249047dd646694956fe078015e16c678ffb1af4071ee208dd6e439df56d"
 container_port = 8080
 
 
 #ECS Service 
 
 
-ecs_service_desired_count = 2 
+ecs_service_desired_count = 2
 
 ecs_service_alb_container_port = 8080
 

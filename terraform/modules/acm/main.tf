@@ -14,7 +14,7 @@ resource "aws_acm_certificate" "ecs" {
 
 
 resource "aws_acm_certificate_validation" "ecs_cert_validation" {
-    validation_record_fqdns = var.validation_record_fqdns
-    certificate_arn = aws_acm_certificate.ecs.arn
-  
+  validation_record_fqdns = var.validation_record_fqdns
+  certificate_arn         = aws_acm_certificate.ecs.arn
+
 }
