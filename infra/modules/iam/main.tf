@@ -3,15 +3,15 @@ resource "aws_iam_role" "ecs_execution" {
 
 
   assume_role_policy = jsonencode({
-    Version = var.assume_role_policy_version
+    Version = var.dns_assume_role_policy_version
     Statement = [
       {
-        Sid    = var.assume_role_policy_sid
-        Effect = var.assume_role_policy_effect
+        Sid    = var.dns_assume_role_policy_sid
+        Effect = var.dns_assume_role_policy_effect
         Principal = {
-          Service = var.assume_role_policy_service
+          Service = var.dns_assume_role_policy_service
         }
-        Action = var.assume_role_policy_action
+        Action = var.dns_assume_role_policy_action
       }
     ]
   })
