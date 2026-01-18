@@ -3,15 +3,15 @@ resource "aws_iam_role" "ecs_execution" {
 
 
   assume_role_policy = jsonencode({
-    Version = "2012-10-17"
+    Version = var.assume_role_policy_version
     Statement = [
       {
-        Sid    = "AllowAccessToECSForTaskExecutionRole"
-        Effect = "Allow"
+        Sid    = var.assume_role_policy_sid
+        Effect = var.assume_role_policy_effect
         Principal = {
-          Service = "ecs-tasks.amazonaws.com"
+          Service = var.assume_role_policy_service
         }
-        Action = "sts:AssumeRole"
+        Action = var.assume_role_policy_action
       }
     ]
   })

@@ -62,3 +62,36 @@ variable "ecs_execution_policy_attatchment_arn" {
   default     = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
 
 }
+
+variable "assume_role_policy_version" {
+  type = string 
+  description = "Version of the assume role policy"
+  default = "2012-10-17"
+  
+}
+
+variable "assume_role_policy_sid" {
+  type = string 
+  description = "Sid of the assume role policy"
+  default = "AllowAccessToECSForTaskExecutionRole"
+  
+}
+
+variable "assume_role_policy_effect" {
+  type = string 
+  description = "Effect of the assume role policy"
+  default = "Allow"
+}
+
+variable "assume_role_policy_service" {
+  type = string 
+  description = "Service of the assume role policy"
+  default = "ecs-tasks.amazonaws.com"
+}
+
+variable "assume_role_policy_action" {
+  type = string 
+  description = "Action of the assume role policy"
+  default = "sts:AssumeRole"
+}
+
