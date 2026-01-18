@@ -8,7 +8,7 @@ The setup follows modern DevOps best practices: modular Infrastructure as Code, 
 
 ## Architecture Overview
 
-> 📌 *Insert architecture diagram here*
+![](./assests/ecs-architecture.png)
 
 ### Live running Deployment and Application
 
