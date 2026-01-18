@@ -1,4 +1,9 @@
-
+variable "required_version" {
+    type = string
+    description = "Terraform Version"
+    default = "= 1.14.3"
+  
+}
 #Provider config
 
 variable "aws_region" {

@@ -1,3 +1,5 @@
+required_version = "= 1.14.3"
+
 #Root variable values 
 
 project_name = "gatus"
