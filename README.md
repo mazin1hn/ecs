@@ -10,7 +10,7 @@ The setup follows modern DevOps best practices: modular Infrastructure as Code, 
 
 ![](./assests/ecs-architecture.png)
 
-### Live running Deployment and Application
+### Live Deployment 
 
 https://github.com/user-attachments/assets/2b846055-5dba-4a77-bd15-e76a9c85e2e4
 
@@ -80,7 +80,7 @@ Triggered on repository changes:
 Triggered only after all previous stages succeed:
 - Applies Terraform changes
 - Updates ECS task definitions with new image references
-- Rolls out changes safely via the ALB
+- Rolls out changes safely via the ALB without downtime
 
 ### Evidence of Successful Pipelines
 
