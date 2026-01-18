@@ -12,7 +12,7 @@ cloudflare_api_token = "b56NtpAibM1ydToeokJOxo1IzzCdrx9gnq5BxNNJ"
 
 ecs_repository_name = "ecs"
 
-ecs_repository_url = "678536383905.dkr.ecr.eu-west-2.amazonaws.com/ecs"
+
 
 
 
@@ -67,9 +67,6 @@ container_port = 8080
 
 #ECS Service 
 
-ecs_service_name = "gatus"
-
-ecs_service_alb_container_name = "gatus"
 
 ecs_service_desired_count = 2 
 

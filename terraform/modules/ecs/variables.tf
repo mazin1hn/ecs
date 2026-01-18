@@ -203,6 +203,7 @@ variable "ecs_service_subnets" {
 variable "ecs_service_alb_container_name" {
     type = string 
     description = "Container name for our ECS service alb"
+    default = null
   
 }
 

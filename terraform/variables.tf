@@ -27,11 +27,6 @@ variable "ecs_repository_name" {
   
 }
 
-variable "ecs_repository_url" {
-    type = string 
-    description = "URL of ecr repository"
-  
-}
 
 
 #VPC Variables
@@ -109,18 +104,8 @@ variable "ecs_cluster_setting_value" {
 }
 
 
-variable "ecs_service_name" {
-    type = string 
-    description = "Ecs service name"
-  
-}
 
-variable "ecs_service_alb_container_name" {
-    type = string 
-    description = "Container name for our ECS service alb"
-    default = null
-  
-}
+
 
 variable "ecs_service_desired_count" {
     type = number
@@ -175,13 +160,6 @@ variable "task_deinition_memory" {
   
 }
 
-variable "task_definition_container_definition" {
-    type = string 
-    description = "Container definition (JSON) of the task definition"
-    default = ""
-    
-  
-}
 
 variable "container_name" {
     type = string
