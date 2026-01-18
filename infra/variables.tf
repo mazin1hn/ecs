@@ -168,17 +168,18 @@ variable "container_name" {
 
 }
 
-variable "image_id" {
-  type        = string
-  description = "ID/tag of the docker image"
-  default     = ""
-
-}
 
 variable "container_port" {
   type        = number
   description = "Port that the container is exposed to"
   default     = null
 
+}
+
+variable "image_tag" {
+  type = string 
+  description = "Github SHA of image"
+  default = ""
+  
 }
 

@@ -53,8 +53,9 @@ module "ecs" {
   task_deinition_memory = var.task_deinition_memory
 
   container_port = var.container_port
-  image_id       = var.image_id
+  image_id = "${data.aws_ecr_repository.ecs.repository_url}:${var.image_tag}"
   container_name = var.container_name
+  
 
 
 
