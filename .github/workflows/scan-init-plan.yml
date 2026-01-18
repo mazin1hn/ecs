@@ -30,7 +30,7 @@ jobs:
       uses: terraform-linters/setup-tflint@v6
 
     - name: Terraform fmt
-      run: terraform fmt --recurive 
+      run: terraform fmt --recursive
 
     - name: Terraform validate
       run: terraform validate 
