@@ -209,6 +209,64 @@ variable "alb_tg_target_type" {
 
 }
 
+variable "health_check_enabled" {
+  type = bool
+  description = "Wether health check is enabled for the ALB"
+  default = true
+  
+}
+
+variable "health_check_healthy_threshold" {
+  type = number 
+  description = "Number of consecutive health check successes required before considering a target healthy"
+  default = 2
+}
+
+variable "health_check_unhealthy_threshold" {
+  type = number 
+  description = "Number of consecutive health check successes required before considering a target unhealthy"
+  default = 3
+}
+
+variable "health_check_interval" {
+  type = number 
+  description = "Approximate amount of time, in seconds, between health checks of an individual target"
+  default = 30
+  
+}
+
+variable "health_check_timeout" {
+  type = number
+  description = "Amount of time, in seconds, during which no response from a target means a failed health check"
+  default = 6
+  
+}
+
+variable "health_check_matcher" {
+  type = string 
+  description = "The HTTP code to use when checking for a successful response from a target"
+  default = "200"
+  
+}
+
+variable "health_check_path" {
+  type = string 
+  description = "Destination for the health check request"
+  default = "/health"
+  
+}
+
+variable "health_check_protocol" {
+  type = string 
+  description = "Protocol the load balancer uses when performing health checks on targets"
+  default = "HTTP"
+  
+}
+
+
+
+
+
 
 #HTTPS Listener 
 

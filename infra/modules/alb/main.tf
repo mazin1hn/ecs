@@ -60,6 +60,17 @@ resource "aws_lb_target_group" "alb_tg" {
   protocol    = var.alb_tg_protocol
   target_type = var.alb_tg_target_type
   vpc_id      = var.vpc_id
+
+  health_check {
+    enabled = var.health_check_enabled
+    healthy_threshold = var.health_check_healthy_threshold
+    unhealthy_threshold = var.health_check_unhealthy_threshold
+    interval = var.health_check_interval
+    timeout = var.health_check_timeout
+    matcher = var.health_check_matcher
+    path = var.health_check_path
+    protocol = var.health_check_protocol
+  }
 }
 
 
