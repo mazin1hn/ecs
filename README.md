@@ -12,7 +12,7 @@ The setup follows modern DevOps best practices: modular Infrastructure as Code, 
 
 ### Live running Deployment and Application
 
-  <video controls src="successful-deployment.mp4" title="Title"></video>
+https://github.com/user-attachments/assets/2b846055-5dba-4a77-bd15-e76a9c85e2e4
 
 ### Deployment Verification
 
