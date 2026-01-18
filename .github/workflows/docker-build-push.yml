@@ -42,9 +42,16 @@ jobs:
      with:
       image-ref: ${{ env.ECR_REPO }}:${{ env.IMAGE_TAG }}
       format: "table"
+      output: trivy-results.txt
       exit-code: 1
       ignore-unfixed: true
       severity: "CRITICAL,HIGH"
+
+   - name: Publish Trivy table as an artifact
+     uses: actions/upload-artifact@v4
+     with:
+      name: trivy-table-results
+      path: trivy-results.txt
 
    - name: Push Docker Image 
      run: docker push $ECR_REPO:$IMAGE_TAG
