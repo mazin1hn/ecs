@@ -4,7 +4,7 @@ This project demonstrates a **production-grade deployment of a Go application on
 
 The setup follows modern DevOps best practices: modular Infrastructure as Code, private networking, secure image delivery, HTTPS termination, automated security scanning, and remote Terraform state management.
 
----
+
 
 ## Architecture Overview
 
@@ -31,7 +31,7 @@ The architecture is designed for **high availability, security, and scalability*
 - Centralised logging with CloudWatch  
 - Fully automated CI/CD pipeline  
 
----
+
 
 ## Infrastructure Components
 
@@ -64,7 +64,6 @@ The architecture is designed for **high availability, security, and scalability*
 - Native Terraform state locking enabled
 - Safe concurrent execution in CI/CD
 
----
 
 ## CI/CD Pipeline (GitHub Actions)
 
@@ -95,7 +94,7 @@ Triggered only after all previous stages succeed:
 
 Authentication to AWS is handled using **GitHub OIDC**, eliminating long-lived AWS credentials.
 
----
+
 
 ## Tech Stack
 
@@ -115,7 +114,7 @@ Authentication to AWS is handled using **GitHub OIDC**, eliminating long-lived A
 - **Go (Golang)**
 - **Docker**
 
----
+
 
 ## Terraform Design
 
@@ -131,7 +130,7 @@ Authentication to AWS is handled using **GitHub OIDC**, eliminating long-lived A
 - Outputs explicitly passed between modules
 - Explicit dependency management via outputs and module inputs
 
----
+
 
 ## Run Locally
 
@@ -149,7 +148,7 @@ go run .
 
 ## Build Docker Image 
 ```bash
-docker build -f docker/Dockerfile -t app:local .
+docker build -f gatus/dockerfile -t app:local .
 docker run -p 8080:8080 app:local
 ```
 ## Security Considerations
@@ -161,7 +160,7 @@ docker run -p 8080:8080 app:local
 - Automated security scanning in CI/CD
 - Immutable container deployments
 
----
+
 
 ## Key Learnings
 
@@ -173,7 +172,7 @@ docker run -p 8080:8080 app:local
 - Building resilient pipelines with scan → plan → apply stages
 - Designing CI/CD pipelines that safely propagate image versions into infrastructure
 
----
+
 
 ## Future Improvements
 
@@ -183,5 +182,5 @@ docker run -p 8080:8080 app:local
 - WAF integration
 - Multi-environment support (dev/staging/prod)
 
----
+
 
