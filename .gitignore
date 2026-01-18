@@ -25,7 +25,7 @@ terraform.rc
 # -------------------------
 # Variable files (secrets)
 # -------------------------
-*.tfvars
+
 *.tfvars.json
 
 # tfvars 
