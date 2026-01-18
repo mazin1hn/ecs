@@ -51,4 +51,4 @@ jobs:
 
    - name: Notify success
      if: success()
-     run: echo Success! Your Docker image tag is $IMAGE_TAG
+     run: echo Success! Your Docker image has been built and pushed!

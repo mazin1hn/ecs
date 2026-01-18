@@ -42,3 +42,7 @@ jobs:
     - name: Terraform Apply
       working-directory: infra
       run: terraform apply --auto-approve
+
+    - name: Notify success
+      if: success()
+      run: echo Success! Your infastructure has been created!

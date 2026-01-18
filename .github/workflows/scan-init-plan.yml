@@ -64,3 +64,7 @@ jobs:
     - name: Terraform Plan 
       working-directory: infra
       run: terraform plan
+
+    - name: Notify success
+      if: success()
+      run: echo Success! Your infastructure has been initialised and planned!
