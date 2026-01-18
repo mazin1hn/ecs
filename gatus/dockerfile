@@ -1,5 +1,5 @@
 # Build the go application into a binary
-FROM golang:1.24.12-alpine3.23@sha256:fa8a88feeb4c88117976cb64983637f8cb1b1d5675068d1adf1a9e930f8e6304 AS builder
+FROM golang:1.24.12-alpine3.23@sha256:415859ccf8256e2b57b4ce0a4b85fd047f443bc2d298a7f841d9a2265fc9d940 AS builder
 RUN apk --update add ca-certificates
 WORKDIR /app
 COPY . ./

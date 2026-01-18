@@ -129,7 +129,7 @@ variable "task_definition_operating_system_family" {
 variable "task_definition_cpu_architecture" {
   type        = string
   description = "The CPU architecture your Task definition will be using"
-  default     = "ARM64"
+  default     = "X86_64"
 
 }
 
