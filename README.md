@@ -84,10 +84,10 @@ Triggered only after all previous stages succeed:
 
 ### Evidence of Successful Pipelines
 
-- [View Docker Build & Push Pipeline](./assests/build+push-pipeline-success.png)
-- [View Scan, Plan and Init Pipeline](./assests/scan+init+plan-pipeline-success.png)
-- [View Apply Pipeline](./assests/apply-pipeline-success.png)
-- [View Destroy Pipeline](./assests/destroy-pipeline-success.png)
+- [View Successful Docker Build & Push Pipeline](./assests/build+push-pipeline-success.png)
+- [View Successful Scan, Plan and Init Pipeline](./assests/scan+init+plan-pipeline-success.png)
+- [View Successful Apply Pipeline](./assests/apply-pipeline-success.png)
+- [View Successful Destroy Pipeline](./assests/destroy-pipeline-success.png)
 - [View Trivy Table published as artifact](./assests/trivy-results-artifact.png)
 
 
