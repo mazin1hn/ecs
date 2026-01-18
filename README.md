@@ -12,7 +12,7 @@ The setup follows modern DevOps best practices: modular Infrastructure as Code, 
 
 ### Live running Deployment and Application
 
-![](assests/successful-deployment.gif)
+  <img src="./assests/successful-deployment.gif" width="900" />
 
 ### Deployment Verification
 
