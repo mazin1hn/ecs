@@ -1,9 +1,13 @@
-name: Terraform plan
+name: Terraform Apply
 
 on:
- workflow_run:
-    workflows: ["IaC Scanning + Terraform init + Terraform plan"]
-    types: [completed]
+ workflow_dispatch:
+   inputs:
+     choice:
+      description: "Confirm to apply infastructure"
+      required: true 
+      type: string 
+      default: ""
 
 env:
  ECR_REPO: 678536383905.dkr.ecr.eu-west-2.amazonaws.com/ecs

@@ -1,6 +1,13 @@
 name: Build and Push Docker Image to ECR Repo
 
-on: [push]
+on:
+ workflow_dispatch:
+   inputs:
+     choice:
+      description: "Confirm to build and push docker image to ECR Repository"
+      required: true 
+      type: string 
+      default: ""
 
 env:
  ECR_REPO: 678536383905.dkr.ecr.eu-west-2.amazonaws.com/ecs

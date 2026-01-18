@@ -1,9 +1,13 @@
 name: IaC Scanning + Terraform init + Terraform plan 
 
 on:
- workflow_run:
-    workflows: ["Build and Push Docker Image to ECR Repo"]
-    types: [completed]
+ workflow_dispatch:
+   inputs:
+     choice:
+      description: "Confirm to scan and plan infastructure"
+      required: true 
+      type: string 
+      default: ""
 
 env:
  ECR_REPO: 678536383905.dkr.ecr.eu-west-2.amazonaws.com/ecs
