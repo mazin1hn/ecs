@@ -1,0 +1,36 @@
+name: Terraform plan
+
+on:
+ workflow_run:
+    workflows: ["IaC Scanning + Terraform init + Terraform plan"]
+    types: [completed]
+
+env:
+ ECR_REPO: 678536383905.dkr.ecr.eu-west-2.amazonaws.com/ecs
+ IMAGE_TAG: ${{ github.sha }}
+ TF_VAR_image_tag: ${{ github.sha }}
+
+jobs:
+  build:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    permissions:
+     id-token: write
+     contents: read
+
+    steps: 
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Configure AWS Credentials 
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+       role-to-assume: ${{ secrets.AWS_GITHUB_ACTIONS_ROLE }}
+       aws-region: eu-west-2
+
+    - name: Setup Terraform 
+      uses: hashicorp/setup-terraform@v3
+
+    - name: Terraform Apply
+      run: terraform apply --auto-approve
