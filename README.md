@@ -33,6 +33,69 @@ The architecture is designed for **high availability, security, and scalability*
 
 ## Repository Structure
 
+```text
+ecs/
+├── .github/workflows
+│    ├──  apply.yml
+│    ├──  destroy.yml
+│    ├── docker-build-push.yml
+│    └── scan-init-plan.yml
+│    
+│
+├── assests/
+│    ├──apply-pipeline-success.png
+│    ├──build+push-pipeline-success.png
+│    ├──ecs-architecture.png
+│    ├──healthy-alb-dns.png
+│    ├──healthy-target-group.png
+│    ├──live-domain.png
+│    ├──scan+init+plan-pipeline-success.png
+│    └──triy-results-artifact-success.png
+│    
+├── gatus/
+│   
+│
+├── infra/
+│  ├── modules/
+│  │   ├── acm/
+│  │   │   ├── main.tf
+│  │   │   ├── outputs.tf
+│  │   │   └── variables.tf
+│  │   ├── alb/
+│  │   │    ├── main.tf
+│  │   │    ├──outputs.tf
+│  │   │    ├── outputs.tf
+│  │   │    └── variables.tf
+│  │   ├── dns/
+│  │   │    ├── main.tf
+│  │   │    ├── outputs.tf
+│  │   │    ├── variables.tf
+│  │   │    └── versions.tf
+│  │   ├── ecs/
+│  │   │    ├── main.tf
+│  │   │    ├── outputs.tf
+│  │   │    └── variables.tf
+│  │   ├── iam/
+│  │   │    ├── main.tf
+│  │   │    ├──outputs.tf
+│  │   │    └── variables.tf
+│  │   └── vpc/
+│  │        ├── main.tf
+│  │        ├── outputs.tf
+│  │        └── variables.tf
+│  │
+│  │  
+│  ├── backend.tf
+│  ├── data.tf
+│  ├── main.tf
+│  ├── outputs.tf
+│  ├── provider.tf
+│  └── variables.tf
+│
+├── .gitignore
+└── README.md
+```
+
 ## Infrastructure Components
 
 ### Networking
