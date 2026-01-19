@@ -31,7 +31,7 @@ The architecture is designed for **high availability, security, and scalability*
 - Centralised logging with CloudWatch  
 - Fully automated CI/CD pipeline  
 
-
+## Repository Structure
 
 ## Infrastructure Components
 
