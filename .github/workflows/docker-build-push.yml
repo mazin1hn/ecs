@@ -10,7 +10,7 @@ on:
       default: ""
 
 env:
- ECR_REPO: 678536383905.dkr.ecr.eu-west-2.amazonaws.com/ecs
+ ECR_REPO: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.eu-west-2.amazonaws.com/ecs
  IMAGE_TAG: ${{ github.sha }}
 
 jobs:
