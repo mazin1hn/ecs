@@ -53,8 +53,12 @@ ecs/
 │    └──triy-results-artifact-success.png
 │    
 ├── gatus/
-│   
+│     ├── ...
+│     ├── Dockerfile
+│     ├── .dockerignore
+│     └── ...
 │
+│    
 ├── infra/
 │  ├── modules/
 │  │   ├── acm/
@@ -211,7 +215,7 @@ go run .
 
 ## Build Docker Image 
 ```bash
-docker build -f gatus/dockerfile -t app:local .
+docker build -f gatus/Dockerfile -t app:local .
 docker run -p 8080:8080 app:local
 ```
 ## Security Considerations
