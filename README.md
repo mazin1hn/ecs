@@ -4,7 +4,7 @@ This project demonstrates a **production-grade deployment of a Go application on
 
 The setup follows modern DevOps best practices: modular Infrastructure as Code, private networking, secure image delivery, HTTPS termination, automated security scanning, and remote Terraform state management.
 
-
+Chechout my blog on the full system design and technical breakdown [here.](https://mazinhanafi1.substack.com/p/building-an-end-to-end-production)
 
 ## Architecture Overview
 
