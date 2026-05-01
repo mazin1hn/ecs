@@ -1,16 +1,16 @@
 # End to End Production Grade Deployment on AWS ECS Fargate - [Go Application]
 
-This project demonstrates a **production-grade deployment of a Go application on AWS ECS Fargate**, with **all infrastructure provisioned using Terraform** and a **fully automated CI/CD pipeline using GitHub Actions**.
+This project demonstrates an **production-grade deployment of a Go application on AWS ECS Fargate**, with **all infrastructure provisioned using Terraform** and a **fully automated CI/CD pipeline using GitHub Actions**.
 
 The setup follows modern DevOps best practices: modular Infrastructure as Code, private networking, secure image delivery, HTTPS termination, automated security scanning, and remote Terraform state management.
 
-Chechout my blog on the full system design and technical breakdown [here.](https://mazinhanafi1.substack.com/p/building-an-end-to-end-production)
+
 
 ## Architecture Overview
 
 ![](./assests/ecs-architecture.png)
 
-### Live Deployment 
+### Live Deployment
 
 https://github.com/user-attachments/assets/2b846055-5dba-4a77-bd15-e76a9c85e2e4
 
@@ -22,14 +22,14 @@ https://github.com/user-attachments/assets/2b846055-5dba-4a77-bd15-e76a9c85e2e4
 
 The architecture is designed for **high availability, security, and scalability**:
 
-- Multi-AZ VPC with public and private subnets  
-- Internet-facing Application Load Balancer (HTTPS)  
-- ECS Fargate tasks running in private subnets  
-- Outbound internet access via NAT Gateways  
-- TLS certificates issued by ACM and DNS-validated via Cloudflare  
-- Container images stored in private Amazon ECR  
-- Centralised logging with CloudWatch  
-- Fully automated CI/CD pipeline  
+- Multi-AZ VPC with public and private subnets
+- Internet-facing Application Load Balancer (HTTPS)
+- ECS Fargate tasks running in private subnets
+- Outbound internet access via NAT Gateways
+- TLS certificates issued by ACM and DNS-validated via Cloudflare
+- Container images stored in private Amazon ECR
+- Centralised logging with CloudWatch
+- Fully automated CI/CD pipeline
 
 ## Repository Structure
 
@@ -40,7 +40,7 @@ ecs/
 │    ├──  destroy.yml
 │    ├── docker-build-push.yml
 │    └── scan-init-plan.yml
-│    
+│
 │
 ├── assests/
 │    ├──apply-pipeline-success.png
@@ -51,14 +51,14 @@ ecs/
 │    ├──live-domain.png
 │    ├──scan+init+plan-pipeline-success.png
 │    └──triy-results-artifact-success.png
-│    
+│
 ├── gatus/
 │     ├── ...
 │     ├── Dockerfile
 │     ├── .dockerignore
 │     └── ...
 │
-│    
+│
 ├── infra/
 │  ├── modules/
 │  │   ├── acm/
@@ -88,7 +88,7 @@ ecs/
 │  │        ├── outputs.tf
 │  │        └── variables.tf
 │  │
-│  │  
+│  │
 │  ├── backend.tf
 │  ├── data.tf
 │  ├── main.tf
@@ -213,7 +213,7 @@ cd gatus
 go run .
 ```
 
-## Build Docker Image 
+## Build Docker Image
 ```bash
 docker build -f gatus/Dockerfile -t app:local .
 docker run -p 8080:8080 app:local
