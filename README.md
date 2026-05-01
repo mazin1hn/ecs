@@ -1,4 +1,4 @@
-# End to End Production Grade Deployment on AWS ECS Fargate - [Go Application]
+# GatusSentinel - End-to-End ECS Deployment on Amazon ECS Fargate - [Go Application]
 
 This project demonstrates an **production-grade deployment of a Go application on AWS ECS Fargate**, with **all infrastructure provisioned using Terraform** and a **fully automated CI/CD pipeline using GitHub Actions**.
 
